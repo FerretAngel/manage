@@ -1,0 +1,110 @@
+.fade-enter-active {
+  transition: all .3s;
+}
+
+/* //先给 所要用的上下层级跳转写一个过渡时间
+  //然后你就可以发挥自己的想象力来写自己动画了 下面是一个例子 */
+.fade-enter-from {
+  transform: translate3d(0, 10%, 0);
+  opacity: 0;
+}
+
+/* 高度变化 */
+.heightZero-enter-active,
+.heightZero-leave-active {
+  transition: all .5s;
+  overflow: hidden;
+}
+
+.heightZero-enter-from,
+.heightZero-leave-to {
+  max-height: 0em !important;
+}
+
+.heightZero-enter-to,
+.heightZero-leave-from {
+  max-height: 10em !important;
+}
+
+/* 宽度变化 */
+.widthZero-enter-active,
+.widthZero-leave-active {
+  transition: all .3s ease;
+  overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.widthZero-enter-from,
+.widthZero-leave-to {
+  max-width: 0em;
+}
+
+.widthZero-enter-to,
+.widthZero-leave-from {
+  max-width: 10em;
+}
+
+/* 透明度 */
+.opacity-enter-active,
+.opacity-leave-active {
+  transition: all .2s;
+}
+
+.opacity-enter-from,
+.opacity-leave-to {
+  opacity: 0;
+}
+
+.opacity-enter-to,
+.opacity-leave-from {
+  opacity: 1;
+}
+
+/* 从左进入 */
+.fromRight-enter-active,
+.fromLeft-enter-active{
+  transition: all .3s;
+  overflow: hidden;
+}
+.fromRight-leave-active,
+.fromLeft-leave-active  {
+  transition: all .2s;
+  overflow: hidden;
+}
+.fromRight-enter-from,
+.fromLeft-leave-to {
+  transform: translateX(10%);
+  opacity: 0;
+}
+.fromRight-leave-to ,
+.fromLeft-enter-from{
+  transform: translateX(-10%);
+  opacity: 0;
+}
+
+.fromRight-enter-to,
+.fromRight-leave-from,
+.fromLeft-enter-to,
+.fromLeft-leave-from {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+@keyframes shake {
+
+  40%,
+  80% {
+    transform: translateX(-5%);
+  }
+
+  20%,
+  60% {
+    transform: translateX(5%);
+  }
+
+  0%,
+  100% {
+    transform: translateX(0%);
+  }
+}
